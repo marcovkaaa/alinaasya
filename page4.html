@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Tag Übersicht</title>
+  <!-- Google Fonts: Chewy einbinden -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <style>
+    /* Basis-Einstellungen */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    /* Hintergrundbild */
+    body {
+      background: url("Colorful Collage Best Friends Slam Book Fun Presentation.jpg") center center no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    /* Chewy-Schrift */
+    .chewy-regular {
+      font-family: "Chewy", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+    /* Container als weißes Rechteck mit 70% Transparenz */
+    .text-box {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      max-width: 90%;
+    }
+    /* Überschrift */
+    h2 {
+      font-size: 2.5em;
+      color: #ff4081;
+      margin-bottom: 20px;
+    }
+    /* Wellen-Animation: Jeder Buchstabe wird animiert */
+    .wave span {
+      display: inline-block;
+      animation: wave 1.5s infinite;
+    }
+    @keyframes wave {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+    /* Text-Absatz */
+    p {
+      font-size: 1.5em;
+      color: #000;
+      margin: 10px 0;
+      line-height: 1.4;
+    }
+    /* Button */
+    button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: #ff4081;
+      color: #fff;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    button:hover {
+      background: #e040fb;
+    }
+  </style>
+</head>
+<body>
+  <div class="text-box" id="overview">
+    <!-- Überschrift mit Wellen-Effekt, in zwei Zeilen -->
+    <h2 class="chewy-regular wave" id="overviewHeading">
+      <span style="animation-delay: 0s;">So</span> 
+      <span style="animation-delay: 0.2s;">sieht</span> 
+      <span style="animation-delay: 0.4s;">unser</span>
+      <br>
+      <span style="animation-delay: 0.6s;">Wochenende</span> 
+      <span style="animation-delay: 0.8s;">aus:</span>
+    </h2>
+    <!-- Zusammenfassung des Tages -->
+    <div id="summary" class="chewy-regular"></div>
+    <!-- Button: DRÜCK MICH -->
+    <button id="sendEmailButton">DRÜCK MICH</button>
+  </div>
+
+  <script>
+    // Lese gespeicherte Daten aus sessionStorage
+    const locationCity = sessionStorage.getItem('location');
+    const activities = JSON.parse(sessionStorage.getItem('activities'));
+
+    // Erstelle die Zusammenfassung des Tages
+    const summaryDiv = document.getElementById('summary');
+    summaryDiv.innerHTML = `
+      <p><strong>Ort:</strong> ${locationCity}</p>
+      <p><strong>Aktivitäten:</strong> ${activities.join(', ')}</p>
+    `;
+
+    // Beim Klick auf den Button wird ein mailto-Link erstellt und der E-Mail-Client geöffnet
+    document.getElementById('sendEmailButton').addEventListener('click', function() {
+      const subject = encodeURIComponent("Wochenende mit Marco");
+      const body = encodeURIComponent(summaryDiv.innerText);
+      const mailtoLink = "mailto:alina-asya@web.de?subject=" + subject + "&body=" + body;
+      
+      // Öffnet den E-Mail-Client
+      window.location.href = mailtoLink;
+      
+      // Nach 2 Sekunden Weiterleitung zu Page 5
+      setTimeout(function() {
+        window.location.href = 'page5.html';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
