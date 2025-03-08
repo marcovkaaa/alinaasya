@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Alina</title>
+  <!-- Google Fonts: Chewy einbinden -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <style>
+    /* Body-Einstellungen für Vollbild-Hintergrund */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* kein Scrollen; optional */
+    }
+
+    /* Hintergrundbild einbinden und auf Vollbild skalieren */
+    body {
+      background: url("Colorful Collage Best Friends Slam Book Fun Presentation.jpg") center center no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Klasse für die Chewy-Schrift */
+    .chewy-regular {
+      font-family: "Chewy", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* Wellen-Animation */
+    .wave span {
+      display: inline-block;
+      animation: wave 1.5s infinite;
+    }
+    @keyframes wave {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Überschrift: Happy Birthday Alina */
+    h1 {
+      font-size: 4em;
+      color: #ff4081;
+      margin-bottom: 20px;
+    }
+
+    /* Container für den unteren Text */
+    .text-box {
+      background: rgba(255, 255, 255, 0.7); /* 70% transparentes Weiß */
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* Absatz: Geburtstagswunsch */
+    p {
+      font-size: 1.5em;
+      color: #000; /* Schwarz, damit es sich vom Hintergrund abhebt */
+      line-height: 1.4;
+      margin: 0; /* damit die <br>-Zeilen sauber wirken */
+    }
+
+    /* Weiter-Button */
+    button {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: #ff4081;
+      color: #fff;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #e040fb;
+    }
+  </style>
+</head>
+<body>
+  <!-- Wellen-Text -->
+  <h1 class="chewy-regular wave">
+    <span style="animation-delay: 0s;">H</span>
+    <span style="animation-delay: 0.1s;">a</span>
+    <span style="animation-delay: 0.2s;">p</span>
+    <span style="animation-delay: 0.3s;">p</span>
+    <span style="animation-delay: 0.4s;">y</span>
+    <span style="animation-delay: 0.5s;"> </span>
+    <span style="animation-delay: 0.6s;">B</span>
+    <span style="animation-delay: 0.7s;">i</span>
+    <span style="animation-delay: 0.8s;">r</span>
+    <span style="animation-delay: 0.9s;">t</span>
+    <span style="animation-delay: 1s;">h</span>
+    <span style="animation-delay: 1.1s;">d</span>
+    <span style="animation-delay: 1.2s;">a</span>
+    <span style="animation-delay: 1.3s;">y</span>
+    <span style="animation-delay: 1.4s;"> </span>
+    <span style="animation-delay: 1.5s;">A</span>
+    <span style="animation-delay: 1.6s;">l</span>
+    <span style="animation-delay: 1.7s;">i</span>
+    <span style="animation-delay: 1.8s;">n</span>
+    <span style="animation-delay: 1.9s;">a</span>
+  </h1>
+
+  <!-- Container mit weißem, transparentem Rechteck für den Text -->
+  <div class="text-box">
+    <p class="chewy-regular">
+      Liebe Alina, zu deinem Geburtstag wünsche ich dir nur das alleeeer beste!!<br>
+      Ich bin extrem froh, dass wir uns kennengelernt haben und ich hoffe, dass wir die nächsten Jahre noch viele weitere schöne Momente miteinander verbringen werden.<br>
+      Bleib genau so wie du bist, kleine Maus!
+    </p>
+  </div>
+
+  <!-- Weiter-Button -->
+  <button onclick="window.location.href='page2.html'">Weiter</button>
+</body>
+</html>
